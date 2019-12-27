@@ -7,13 +7,18 @@ import ButtonControl from './ButtonControl';
 class App extends React.Component {
 
   state = {
-    counterValue: 1,
+    counterValue: 0,
     incStatus: "",
     resetStatus: "disabled"
   }
 
   changeValue = () => {
-    let newValue = this.state.counterValue + 1;
+    let currentValue = this.state.counterValue;
+    let newValue = currentValue;
+    if (currentValue < 5) {
+      newValue = currentValue + 1;
+    }
+    
     this.setState({
       counterValue: newValue,
       resetStatus: ""

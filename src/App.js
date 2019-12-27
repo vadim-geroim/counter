@@ -8,8 +8,8 @@ class App extends React.Component {
 
   state = {
     counterValue: 1,
-    resetStatus: false,
-    incStatus: true
+    incStatus: "",
+    resetStatus: "disabled"
   }
 
   changeValue = () => {
@@ -33,8 +33,8 @@ class App extends React.Component {
         <br />
         <br />
         <div>
-          <ButtonControl functionOnClick={this.changeValue} btnName={"inc"}/>
-          <ButtonControl functionOnClick={this.resetValue} btnName={"reset"}/>
+          <ButtonControl functionOnClick={this.changeValue} btnName={"inc"} isDisabled={this.state.incStatus}/>
+          <ButtonControl functionOnClick={this.resetValue} btnName={"reset"} isDisabled={this.state.resetStatus}/>
         </div>
       </div>
     );

@@ -5,7 +5,7 @@ class ButtonControl extends React.Component {
   render = () => {
     return (
       <span>
-        <button>{this.props.btnName}</button>
+        <button onClick={this.props.changeValue}>{this.props.btnName}</button>
       </span>
     );
   };

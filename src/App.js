@@ -5,14 +5,23 @@ import ButtonControl from './ButtonControl';
 
 
 class App extends React.Component {
+
+  state = {
+    counterValue: 1
+  }
+
+  changeValue = () => {
+    alert("hey");
+  }
+
   render = () => {
     return(
       <div className="App">
-        <Display />
+        <Display counterValue={this.state.counterValue}/>
         <br />
         <br />
         <div>
-          <ButtonControl btnName={"inc"}/>
+          <ButtonControl changeValue={this.changeValue} btnName={"inc"}/>
           <ButtonControl btnName={"reset"}/>
         </div>
       </div>

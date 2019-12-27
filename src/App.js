@@ -43,14 +43,15 @@ class App extends React.Component {
   render = () => {
     return(
       <div className="App">
-        <Display counterValue={this.state.counterValue} counterColor={this.state.counterColor}/>
-        <br />
-        <br />
-        <div>
+        <div className="counter">
+          <Display counterValue={this.state.counterValue} counterColor={this.state.counterColor}/>
+          <div className="countrol-panel">
           <ButtonControl functionOnClick={this.changeValue} btnName={"inc"} isDisabled={this.state.incStatus}/>
           <ButtonControl functionOnClick={this.resetValue} btnName={"reset"} isDisabled={this.state.resetStatus}/>
+          </div>
         </div>
-      </div>
+        </div>
+   
     );
   } 
 }

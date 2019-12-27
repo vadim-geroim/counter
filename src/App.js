@@ -15,14 +15,16 @@ class App extends React.Component {
   changeValue = () => {
     let newValue = this.state.counterValue + 1;
     this.setState({
-      counterValue: newValue
+      counterValue: newValue,
+      resetStatus: ""
     })
   }
 
   resetValue = () => {
     let newValue = 0;
     this.setState({
-      counterValue: newValue
+      counterValue: newValue,
+      resetStatus: "disabled"
     })
   }
 

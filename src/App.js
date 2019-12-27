@@ -11,9 +11,11 @@ class App extends React.Component {
   }
 
   changeValue = () => {
-    alert("hey");
+    let newValue = this.state.counterValue + 1;
+    this.setState({
+      counterValue: newValue
+    })
   }
-
   render = () => {
     return(
       <div className="App">

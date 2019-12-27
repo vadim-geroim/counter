@@ -1,22 +1,23 @@
 import React from 'react';
 import './App.css';
+import Display from './Display';
+import ButtonControl from './ButtonControl';
 
-function App() {
-  return (
-    <div className="App">
-      <div>1</div>
-      <br />
-      <br />
-      <div>
-        <span>
-          <button>inc</button>
-        </span>
-        <span>
-          <button>reset</button>
-        </span>
+
+class App extends React.Component {
+  render = () => {
+    return(
+      <div className="App">
+        <Display />
+        <br />
+        <br />
+        <div>
+          <ButtonControl btnName={"inc"}/>
+          <ButtonControl btnName={"reset"}/>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } 
 }
 
 export default App;

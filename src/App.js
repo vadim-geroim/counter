@@ -7,7 +7,9 @@ import ButtonControl from './ButtonControl';
 class App extends React.Component {
 
   state = {
-    counterValue: 1
+    counterValue: 1,
+    resetStatus: false,
+    incStatus: true
   }
 
   changeValue = () => {
@@ -16,6 +18,14 @@ class App extends React.Component {
       counterValue: newValue
     })
   }
+
+  resetValue = () => {
+    let newValue = 0;
+    this.setState({
+      counterValue: newValue
+    })
+  }
+
   render = () => {
     return(
       <div className="App">
@@ -23,8 +33,8 @@ class App extends React.Component {
         <br />
         <br />
         <div>
-          <ButtonControl changeValue={this.changeValue} btnName={"inc"}/>
-          <ButtonControl btnName={"reset"}/>
+          <ButtonControl functionOnClick={this.changeValue} btnName={"inc"}/>
+          <ButtonControl functionOnClick={this.resetValue} btnName={"reset"}/>
         </div>
       </div>
     );

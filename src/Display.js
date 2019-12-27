@@ -3,7 +3,7 @@ import "./App.css";
 
 class Display extends React.Component {
   render = () => {
-    return <div>{this.props.counterValue}</div>;
+    return <div className={this.props.counterColor}>{this.props.counterValue}</div>;
   };
 }
 

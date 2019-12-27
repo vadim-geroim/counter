@@ -9,7 +9,8 @@ class App extends React.Component {
   state = {
     counterValue: 0,
     incStatus: "",
-    resetStatus: "disabled"
+    resetStatus: "disabled",
+    counterColor: ""
   }
 
   changeValue = () => {
@@ -23,11 +24,10 @@ class App extends React.Component {
       })
     } else {
       this.setState({
-        incStatus: "disabled"
+        incStatus: "disabled",
+        counterColor: "counter-warning"
       })
     }
-    
- 
   }
 
   resetValue = () => {
@@ -35,14 +35,15 @@ class App extends React.Component {
     this.setState({
       counterValue: newValue,
       resetStatus: "disabled",
-      incStatus: ""
+      incStatus: "",
+      counterColor: ""
     })
   }
 
   render = () => {
     return(
       <div className="App">
-        <Display counterValue={this.state.counterValue}/>
+        <Display counterValue={this.state.counterValue} counterColor={this.state.counterColor}/>
         <br />
         <br />
         <div>

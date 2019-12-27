@@ -17,19 +17,25 @@ class App extends React.Component {
     let newValue = currentValue;
     if (currentValue < 5) {
       newValue = currentValue + 1;
+      this.setState({
+        counterValue: newValue,
+        resetStatus: ""
+      })
+    } else {
+      this.setState({
+        incStatus: "disabled"
+      })
     }
     
-    this.setState({
-      counterValue: newValue,
-      resetStatus: ""
-    })
+ 
   }
 
   resetValue = () => {
     let newValue = 0;
     this.setState({
       counterValue: newValue,
-      resetStatus: "disabled"
+      resetStatus: "disabled",
+      incStatus: ""
     })
   }
 
